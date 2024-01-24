@@ -1,0 +1,42 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		bool isJumping = true; //Used to check if player is jumping
+		int jumpHeight = 10; //Sets the players jump height
+		float jumpMult = 1.1f; //Used to change the jump height
+		string jumpConfirm = "Were in the air!"; // used to print in console if the player is jumping
+		float currentHeight = 0; //This is used to determine the players current height
+		int fallSpeed = 5; //Used to calc the fall speed
+		int slowFall = 2; // this is a number we will use to decrease the fall speed number
+		
+		// used to increase jump height
+		float jumpActual = jumpHeight * jumpMult; 
+		
+		
+		// sets the current height to be the jump height with an increase of the jump multiplier
+		currentHeight += jumpActual; 
+		
+		// if jumping is true, this will print some flavor text, and show currentHeight, then how fast youre falling
+		if (isJumping == true);
+			Console.WriteLine("You jumped! you are " + currentHeight + " units high. " + jumpConfirm);
+			Console.WriteLine("uh oh... now were falling at " + fallSpeed + " units per second!");
+			isJumping = false;
+		
+		
+		// this is to show the units of height after one second, then prints that to show its working
+		currentHeight -= fallSpeed; 
+		Console.WriteLine("Now were only " + currentHeight + " units high");
+		
+		// this function is decreasing that number, then prints to show if its working
+		currentHeight /= slowFall; 
+		Console.WriteLine("You used your parachute! Now youre only falling " + currentHeight + " units per second!");
+		
+		
+		// this checks the fall speed, if its low enough itll print the following statement.
+		if ( currentHeight <= 3 && isJumping == false); 
+			Console.WriteLine("Were probably going to be fine!");
+	}
+}
